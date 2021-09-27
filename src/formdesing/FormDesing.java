@@ -19,6 +19,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
@@ -69,6 +70,28 @@ public class FormDesing extends Application {
         hbBtn.setAlignment(Pos.BOTTOM_RIGHT);
         hbBtn.getChildren().add(btn); // para que salga el boton en la escena
         grid.add(hbBtn, 1, 4);
+        
+        // Añadimos un textcontrol para mostrar el mensaje
+        final Text actiontarget = new Text();
+        grid.add(actiontarget, 1, 6);
+        
+        // Manejo del evento para el boton a la hora de accionarlo
+        
+        btn.setOnAction(new EventHandler<ActionEvent>() 
+        {
+ 
+         @Override
+        public void handle(ActionEvent e) 
+        {
+            actiontarget.setFill(Color.FIREBRICK);
+            actiontarget.setText("Sign in button pressed");
+        }
+        });
+        
+        
+        
+        
+        
         
         
         
